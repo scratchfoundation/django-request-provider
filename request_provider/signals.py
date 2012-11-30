@@ -33,7 +33,7 @@ request_accessor = SingleHandlerSignal()
 
 def get_request():
     signal_response = request_accessor.send(None)
-    if signal_response:
+    if not signal_response:
         return None
     return signal_response[0][1]
 
